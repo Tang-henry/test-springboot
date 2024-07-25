@@ -1,14 +1,14 @@
 {
   "queryFields": [
-    "name"
+    "id"
   ],
   "insertFields": [
-    "name","age","remark"
+    "order_id"
   ],
   "updateFields": [
-    "id","name","age","remark"
+    "id","order_id"
   ],
   "resultFields": [
-    "id","name","age","remark"
+    "id","order_id"
   ]
 }

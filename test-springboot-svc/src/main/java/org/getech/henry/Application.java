@@ -18,8 +18,8 @@ import static java.util.concurrent.TimeUnit.SECONDS;
  * @date 2020/2/19
  */
 @SpringBootApplication
-@EnableDiscoveryClient
-@EnableFeignClients(basePackages = "cn.getech")
+//@EnableDiscoveryClient
+//@EnableFeignClients(basePackages = "org.getech")
 @MapperScan("org.getech.henry.mapper")
 public class Application {
 
