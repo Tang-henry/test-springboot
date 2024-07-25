@@ -1,0 +1,15 @@
+{
+  "author": "替换成开发者OA账号@getech.cn",
+  "moduleName": "替换成项目moduleName",
+  "parentPackage": "替换成项目包名",
+  "tables": "请填写表名",
+  "tablePrex": "表前缀,如填写则生成的entity等对象名会去掉前缀部分",
+  "functionName": "生成的表对应功能,生成注释使用,比如：修改xx，查询xx列表，xx服务接口",
+  "serviceName": "所属微服务名称,用于组装api路径",
+  "jdbcUrl": "jdbc:mysql://10.74.20.139:31555/poros?useUnicode=true&characterEncoding=UTF-8",
+  "jdbcUsername": "root",
+  "jdbcPassword": "password",
+  "jdbcDriver": "com.mysql.cj.jdbc.Driver",
+  "jdbcSchema": "",
+  "mini": false
+}

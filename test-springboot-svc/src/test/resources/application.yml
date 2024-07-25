@@ -1,0 +1,49 @@
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://10.74.20.139:31555/poros?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&serverTimezone=GMT%2B8
+      username: root
+      password: password
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: cn.getech.poros.archetype.entity
+
+# Logger Config
+logging:
+  level:
+    cn.getech.poros.archetype.mapper: debug
+    cn.getech: debug
+
+feign:
+  sentinel:
+    enabled: true
+  httpclient:
+    # 最大连接数，默认：200
+    max-connections: 200
+    # 最大路由，默认：50
+    max-connections-per-route: 50
+    # 连接超时，默认：2000/毫秒
+    connection-timeout: 2000
+    # 生存时间，默认：900L
+    time-to-live: 900
+    time-to-live-unit: seconds
+
+poros:
+  debug: true
+  sername: archetype-module
+  #系统标识，读取maven property
+  syscode: '@syscode@'
+  # swagger配置
+  swagger:
+    version: 1.0
+    title: test
+    #rest响应aop
+    base-package: cn.getech.poros.archetype
+  rest-aop:
+    base-packages: cn.getech.poros.archetype
+  permission:
+    enabled: false
+
+

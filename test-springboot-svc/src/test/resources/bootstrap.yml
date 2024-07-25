@@ -1,0 +1,48 @@
+server:
+  port: 8030
+
+management:
+  endpoint:
+    health:
+      show-details: ALWAYS
+  server:
+    port: 8031
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+spring:
+  application:
+    name: archetype-module
+  cloud:
+    nacos:
+      config:
+        server-addr: 10.74.20.141:8848
+        namespace: b65f5322-8bf6-417d-a0b9-b3651d2d3709
+        group: MICRO_SERVICE
+        file-extension: yaml
+        shared-configs[0]:
+          dataId: common1.yaml
+          group: DEFAULT_GROUP
+          refresh: true
+        enabled: false
+      discovery:
+        server-addr: 10.74.20.141:8848
+        namespace: b65f5322-8bf6-417d-a0b9-b3651d2d3709
+        group: MICRO_SERVICE
+        cluster-name: archetype-module
+        enabled: false
+    sentinel:
+      #取消Sentinel控制台懒加载
+#      eager: true
+      transport:
+        dashboard: 10.74.20.140:8080
+        port: 8719
+      enabled: false
+#      datasource.ds.nacos:
+#        server-addr: 10.74.20.140:8848
+#        namespace: b65f5322-8bf6-417d-a0b9-b3651d2d3709
+#        dataId: archetype-module
+#        groupId: SENTINEL_GROUP
+#        ruleType: flow

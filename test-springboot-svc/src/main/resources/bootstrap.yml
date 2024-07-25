@@ -1,0 +1,55 @@
+server:
+  port: 8030
+  servlet:
+    context-path: /api/test-springboot
+
+management:
+  server:
+    port: 8031
+  health:
+    sentinel:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
+
+spring:
+  application:
+    name: test-springboot
+  cloud:
+    nacos:
+      config:
+        enabled: false
+        server-addr: nacos:8848
+        group: POROS_PLATFORM
+        file-extension: yaml
+        shared-configs[0]:
+          dataId: poros-common.yaml
+          group: POROS_PLATFORM
+          refresh: true
+      discovery:
+        enabled: false
+        server-addr: nacos:8848
+        group: DEFAULT_GROUP
+        metadata: {"service.desc": "test-springboot"}
+    sentinel:
+      #取消Sentinel控制台懒加载
+      #eager: true
+      enabled: false
+      transport:
+        dashboard: sentinel:8080
+        port: 8032
+      datasource:
+        ds1:
+          nacos:
+            server-addr: nacos:8848
+            dataId: test-springboot-rule.json
+            groupId: POROS_PLATFORM
+            ruleType: flow
+            dataType: json

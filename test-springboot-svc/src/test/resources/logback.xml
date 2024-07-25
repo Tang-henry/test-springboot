@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="AuditLogAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                $$@syscode@‖archetype-module-svc‖uid:%X{uid:-NULL}‖name:%X{name:-NULL}‖tenantId:%X{tenantId:-NULL}‖TraceId:%X{X-B3-TraceId:-NULL}‖SpanId:%X{X-B3-SpanId:-NULL}‖AUDIT_LOG‖%-5level‖%d{yyyy-MM-dd HH:mm:ss.SSS}‖%thread‖%logger{36}.%M‖%msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <appender name="LoginLogAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                $$@syscode@‖archetype-module-svc‖uid:%X{uid:-NULL}‖name:%X{name:-NULL}‖tenantId:%X{tenantId:-NULL}‖TraceId:%X{X-B3-TraceId:-NULL}‖SpanId:%X{X-B3-SpanId:-NULL}‖LOGIN_LOG‖%-5level‖%d{yyyy-MM-dd HH:mm:ss.SSS}‖%thread‖%logger{36}.%M‖%msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <appender name="BizLogAppender" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                $$@syscode@‖archetype-module-svc‖uid:%X{uid:-NULL}‖name:%X{name:-NULL}‖tenantId:%X{tenantId:-NULL}‖TraceId:%X{X-B3-TraceId:-NULL}‖SpanId:%X{X-B3-SpanId:-NULL}‖BIZ_LOG‖%-5level‖%d{yyyy-MM-dd HH:mm:ss.SSS}‖%thread‖%logger{36}.%M‖%msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <logger name="audit_log" level="info" additivity="false">
+        <appender-ref ref="AuditLogAppender"/>
+    </logger>
+
+    <logger name="login_log" level="info" additivity="false">
+        <appender-ref ref="LoginLogAppender"/>
+    </logger>
+
+    <root level="info">
+        <appender-ref ref="BizLogAppender"/>
+    </root>
+</configuration>

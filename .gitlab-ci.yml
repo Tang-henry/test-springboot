@@ -1,0 +1,3 @@
+include:
+  - project: 'poros-public/gitlab-ci-template'
+    file: '.gitlab-ci-java-poros3-template.yml'

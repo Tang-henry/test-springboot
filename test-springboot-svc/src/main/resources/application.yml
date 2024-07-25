@@ -1,0 +1,33 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      url: jdbc:mysql://10.74.143.19:30567/nacos2?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&serverTimezone=GMT%2B8
+      username: admin
+      password: 82qFhADcQ6
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: org.getech.henry.entity
+
+
+poros:
+  gateway:
+    enabled: false
+    gatewayUrl: http://kong:8001
+  debug: true
+  sername: test-springboot
+  #系统标识，读取maven property
+  syscode: '@syscode@'
+  # swagger配置
+  swagger:
+    version: 1.0
+    title: test
+    base-package: org.getech.henry
+  #rest响应aop
+  rest-aop:
+    base-packages: org.getech.henry
+  permission:
+    enabled: false
+debug: true

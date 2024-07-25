@@ -1,0 +1,14 @@
+{
+  "queryFields": [
+    "name"
+  ],
+  "insertFields": [
+    "name","age","remark"
+  ],
+  "updateFields": [
+    "id","name","age","remark"
+  ],
+  "resultFields": [
+    "id","name","age","remark"
+  ]
+}

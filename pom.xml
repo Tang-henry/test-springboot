@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>poros-starter-parent</artifactId>
+        <groupId>cn.getech.poros</groupId>
+        <version>3.0.0.RELEASE</version>
+    </parent>
+    <groupId>org.getech.henry</groupId>
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+    <artifactId>test-springboot</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <poros.starter.version>3.0.0.RELEASE</poros.starter.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>cn.getech.poros</groupId>
+                <artifactId>poros-starter-web</artifactId>
+                <version>${poros.starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.getech.poros</groupId>
+                <artifactId>poros-starter-orm</artifactId>
+                <version>${poros.starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.getech.poros</groupId>
+                <artifactId>poros-starter-codegen</artifactId>
+                <version>${poros.starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.getech.poros</groupId>
+                <artifactId>poros-starter-excel</artifactId>
+                <version>${poros.starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.getech.poros</groupId>
+                <artifactId>poros-starter-feign</artifactId>
+                <version>${poros.starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.getech.poros</groupId>
+                <artifactId>poros-starter-kong</artifactId>
+                <version>${poros.starter.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.getech.poros</groupId>
+                <artifactId>poros-starter-trace</artifactId>
+                <version>${poros.starter.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+<modules>  <module>test-springboot-api</module>
+    <module>test-springboot-svc</module>
+  </modules>
+</project>
